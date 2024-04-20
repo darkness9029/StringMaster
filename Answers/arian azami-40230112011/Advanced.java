@@ -24,26 +24,14 @@ public class Advanced {
      *         firstName & lastName is Capitalized (example : Harry Potter)
      */
     public String normalizingName(String firstName, String lastName) {
-        char A = firstName.charAt(0);
-        char B = lastName.charAt(0);
-        int temp;
-        temp = (int) A;
-        if (temp > 97) {
-            temp -= 32;
-            A = (char) temp;
+      String F=String.valueOf(firstName.charAt(0));
+        String L=String.valueOf(lastName.charAt(0));
+        String x=firstName.substring(1);
+        String y=lastName.substring(1);
+        if (lastName!=" ") {
+            return (F.toUpperCase()+x.toLowerCase() + " " +L.toUpperCase()+ y.toLowerCase());
         }
-        temp = (int) B;
-        if (temp > 97) {
-            temp -= 32;
-            B = (char) temp;
-        }
-        firstName = firstName.toLowerCase();
-        lastName = lastName.toLowerCase();
-        char C = firstName.charAt(0);
-        char D = lastName.charAt(0);
-        firstName.replace(C, A);
-        lastName.replace(D, B);
-        return (firstName + " " + lastName);
+        return (F.toUpperCase()+x.toLowerCase());
     }
     /**
      * Removing repeated letter in a word
